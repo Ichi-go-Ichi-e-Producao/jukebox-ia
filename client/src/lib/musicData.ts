@@ -16,10 +16,24 @@ export interface Track {
   neonColorRgb: string;
   audioUrl: string;
   audioUrlAlt: string;
-  theme: "se-olha" | "viva";
+  theme: ThemeId;
 }
 
-export const THEMES = {
+export type ThemeId =
+  | "se-olha"
+  | "viva"
+  | "ser-feliz"
+  | "resiliencia"
+  | "forca-interior"
+  | "esperanca"
+  | "luz-interior"
+  | "transformacao"
+  | "liberdade"
+  | "conexao"
+  | "evolucao"
+  | "harmonia";
+
+export const THEMES: Record<ThemeId, { id: ThemeId; title: string; subtitle: string; description: string; icon: string }> = {
   "se-olha": {
     id: "se-olha",
     title: "Se Olha",
@@ -33,6 +47,76 @@ export const THEMES = {
     subtitle: "Diversão & Festa",
     description: "Músicas pra dançar e rir — mas com aquele verso escondido que te pega de surpresa e te faz refletir.",
     icon: "🎉",
+  },
+  "ser-feliz": {
+    id: "ser-feliz",
+    title: "Ser Feliz",
+    subtitle: "Alegria mesmo quando tudo não está bom",
+    description: "Músicas que lembram que a felicidade é uma escolha, mesmo nos dias difíceis.",
+    icon: "☀️",
+  },
+  "resiliencia": {
+    id: "resiliencia",
+    title: "Resiliência",
+    subtitle: "Nunca desistir, perseverar",
+    description: "Músicas que dão força pra continuar quando tudo parece difícil demais.",
+    icon: "🔥",
+  },
+  "forca-interior": {
+    id: "forca-interior",
+    title: "Força Interior",
+    subtitle: "A força que vem de dentro",
+    description: "Músicas que despertam o poder que já existe em você.",
+    icon: "⚡",
+  },
+  "esperanca": {
+    id: "esperanca",
+    title: "Esperança",
+    subtitle: "Manter a esperança viva",
+    description: "Músicas que acendem a luz no fim do túnel.",
+    icon: "🌱",
+  },
+  "luz-interior": {
+    id: "luz-interior",
+    title: "Luz Interior",
+    subtitle: "Encontrar a luz dentro de si",
+    description: "Músicas que iluminam o caminho de dentro pra fora.",
+    icon: "✨",
+  },
+  "transformacao": {
+    id: "transformacao",
+    title: "Transformação",
+    subtitle: "Renascer e se transformar",
+    description: "Músicas sobre a beleza de mudar, crescer e se reinventar.",
+    icon: "🦋",
+  },
+  "liberdade": {
+    id: "liberdade",
+    title: "Liberdade",
+    subtitle: "Ser livre, quebrar correntes",
+    description: "Músicas que celebram a liberdade em todas as suas formas.",
+    icon: "🕊️",
+  },
+  "conexao": {
+    id: "conexao",
+    title: "Conexão",
+    subtitle: "Conexão entre pessoas",
+    description: "Músicas sobre o poder de se conectar com o outro.",
+    icon: "🤝",
+  },
+  "evolucao": {
+    id: "evolucao",
+    title: "Evolução",
+    subtitle: "Crescer e evoluir",
+    description: "Músicas que celebram o crescimento e a jornada de evoluir.",
+    icon: "🚀",
+  },
+  "harmonia": {
+    id: "harmonia",
+    title: "Harmonia",
+    subtitle: "Equilíbrio e paz",
+    description: "Músicas que trazem equilíbrio, paz e serenidade.",
+    icon: "🎵",
   },
 };
 
@@ -313,8 +397,124 @@ export const tracks: Track[] = [
     audioUrlAlt: `${CDN}/BppqsNGPnmclOrvy.mp3`,
     theme: "viva",
   },
+
+  // ========== TEMA 3: SER FELIZ (Xmigi) ==========
+  {
+    id: "t3-soul-en",
+    title: "Joy in the Storm",
+    style: "Soul",
+    language: "English",
+    flag: "🇺🇸",
+    country: "USA",
+    neonColor: "#ffeb3b",
+    neonColorRgb: "255, 235, 59",
+    audioUrl: "https://cdn1.suno.ai/43c03554-7a1b-46b4-ba83-6a4145d63495.mp3",
+    audioUrlAlt: "https://cdn1.suno.ai/0ebc27b4-a413-4bf5-b27d-e493a6e9eba6.mp3",
+    theme: "ser-feliz",
+  },
+
+  // ========== TEMA 4: RESILIÊNCIA (Xmigi) ==========
+  {
+    id: "t4-chanson-fr",
+    title: "Persévérance",
+    style: "Chanson",
+    language: "Français",
+    flag: "🇫🇷",
+    country: "França",
+    neonColor: "#ff5722",
+    neonColorRgb: "255, 87, 34",
+    audioUrl: "https://cdn1.suno.ai/314b4c3a-1280-465c-bdc2-291af92aa103.mp3",
+    audioUrlAlt: "https://cdn1.suno.ai/98c17eeb-f47d-4634-b202-070e0d9d6d52.mp3",
+    theme: "resiliencia",
+  },
+  {
+    id: "t4-flamenco-es",
+    title: "Nunca Desisto",
+    style: "Flamenco",
+    language: "Español",
+    flag: "🇪🇸",
+    country: "Espanha",
+    neonColor: "#ff5722",
+    neonColorRgb: "255, 87, 34",
+    audioUrl: "https://cdn1.suno.ai/c0d70589-e17c-48b8-b249-9e17e3d2036b.mp3",
+    audioUrlAlt: "https://cdn1.suno.ai/890ced54-8e6e-4751-bb1e-5dea0db92539.mp3",
+    theme: "resiliencia",
+  },
+
+  // ========== TEMA 5: FORÇA INTERIOR (Xmigi) ==========
+  {
+    id: "t5-tango-ar",
+    title: "Mi Fuerza",
+    style: "Tango",
+    language: "Español",
+    flag: "🇦🇷",
+    country: "Argentina",
+    neonColor: "#f44336",
+    neonColorRgb: "244, 67, 54",
+    audioUrl: "https://cdn1.suno.ai/58e47766-58ed-4811-8b3e-ab2b58d0fedd.mp3",
+    audioUrlAlt: "https://cdn1.suno.ai/79fe3bfd-4840-4354-94b9-3458ab891898.mp3",
+    theme: "forca-interior",
+  },
+
+  // ========== TEMA 8: CONEXÃO (Manus) ==========
+  {
+    id: "t8-highlife-ng",
+    title: "Connection Strong",
+    style: "Afrobeat-Highlife",
+    language: "Pidgin English",
+    flag: "🇳🇬",
+    country: "Nigéria",
+    neonColor: "#2196f3",
+    neonColorRgb: "33, 150, 243",
+    audioUrl: "https://cdn1.suno.ai/338fd060-862c-4a5d-a33f-9d861617710d.mp3",
+    audioUrlAlt: "https://cdn1.suno.ai/26ff9b04-8b4f-4c60-817d-66bf03c63ef9.mp3",
+    theme: "conexao",
+  },
+  {
+    id: "t8-ambient-jp",
+    title: "つながり",
+    style: "Japanese Ambient",
+    language: "日本語",
+    flag: "🇯🇵",
+    country: "Japão",
+    neonColor: "#2196f3",
+    neonColorRgb: "33, 150, 243",
+    audioUrl: "https://cdn1.suno.ai/84c64e0b-85d3-4b33-bfa9-7f616fa5caef.mp3",
+    audioUrlAlt: "https://cdn1.suno.ai/6498dd7e-4078-49dd-9da2-203b0913d673.mp3",
+    theme: "conexao",
+  },
+
+  // ========== TEMA 9: EVOLUÇÃO (Manus) ==========
+  {
+    id: "t9-trap-kr",
+    title: "진화",
+    style: "Korean Trap",
+    language: "한국어",
+    flag: "🇰🇷",
+    country: "Coreia do Sul",
+    neonColor: "#e91e63",
+    neonColorRgb: "233, 30, 99",
+    audioUrl: "https://cdn1.suno.ai/c0990ff3-1e39-4927-b64e-0f36c20e7913.mp3",
+    audioUrlAlt: "https://cdn1.suno.ai/18ea85c8-9260-4c46-9922-a46368c3661b.mp3",
+    theme: "evolucao",
+  },
+
+  // ========== TEMA 7: TRANSFORMAÇÃO (Manus) ==========
+  {
+    id: "t7-bossa-pt",
+    title: "Renascimento",
+    style: "Bossa Nova",
+    language: "Português",
+    flag: "🇧🇷",
+    country: "Brasil",
+    neonColor: "#9c27b0",
+    neonColorRgb: "156, 39, 176",
+    audioUrl: "https://cdn1.suno.ai/d8f17b44-f93b-40d4-9130-191a60091e99.mp3",
+    audioUrlAlt: "https://cdn1.suno.ai/290a01c8-2898-4ffe-9a94-245a5074887f.mp3",
+    theme: "transformacao",
+  },
 ];
 
-export function getTracksByTheme(theme: "se-olha" | "viva"): Track[] {
+export function getTracksByTheme(theme: ThemeId): Track[] {
   return tracks.filter((t) => t.theme === theme);
 }
