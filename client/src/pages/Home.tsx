@@ -17,13 +17,11 @@ const EQ_IMG = "https://private-us-east-1.manuscdn.com/sessionFile/MzFEzFo2637tw
 
 // Cor neon por tema para os botões do seletor
 const THEME_COLORS: Record<ThemeId, { main: string; rgb: string }> = {
-  "se-olha":       { main: "#ff6ec7", rgb: "255, 110, 199" },
-  "viva":          { main: "#ffd740", rgb: "255, 215, 64" },
   "ser-feliz":     { main: "#ffeb3b", rgb: "255, 235, 59" },
   "resiliencia":   { main: "#ff5722", rgb: "255, 87, 34" },
-  "forca-interior":{ main: "#f44336", rgb: "244, 67, 54" },
-  "esperanca":     { main: "#4caf50", rgb: "76, 175, 80" },
   "luz-interior":  { main: "#ffc107", rgb: "255, 193, 7" },
+  "esperanca":     { main: "#4caf50", rgb: "76, 175, 80" },
+  "forca-interior":{ main: "#f44336", rgb: "244, 67, 54" },
   "transformacao": { main: "#9c27b0", rgb: "156, 39, 176" },
   "liberdade":     { main: "#00bcd4", rgb: "0, 188, 212" },
   "conexao":       { main: "#2196f3", rgb: "33, 150, 243" },
@@ -32,7 +30,7 @@ const THEME_COLORS: Record<ThemeId, { main: string; rgb: string }> = {
 };
 
 export default function Home() {
-  const [activeTheme, setActiveTheme] = useState<ThemeId>("se-olha");
+  const [activeTheme, setActiveTheme] = useState<ThemeId>("ser-feliz");
   const player = useAudioPlayer();
   const themeTracks = getTracksByTheme(activeTheme);
   const themeInfo = THEMES[activeTheme];
