@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LÚMEN Jukebox - Teste</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%);
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: rgba(20, 10, 40, 0.8);
+      border: 2px solid #ff6ec7;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 40px rgba(255, 110, 199, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ff6ec7, #ffd740);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: #aaa;
+      margin-bottom: 30px;
+      font-size: 0.95em;
+    }
+
+    .status {
+      background: rgba(76, 175, 80, 0.1);
+      border-left: 4px solid #4caf50;
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+    }
+
+    .status.success {
+      color: #4caf50;
+    }
+
+    .status.error {
+      background: rgba(244, 67, 54, 0.1);
+      border-left-color: #f44336;
+      color: #f44336;
+    }
+
+    .tracks-list {
+      margin-top: 30px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .track-item {
+      background: rgba(255, 110, 199, 0.05);
+      border: 1px solid rgba(255, 110, 199, 0.2);
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .track-title {
+      font-weight: 600;
+      color: #ff6ec7;
+    }
+
+    .track-theme {
+      font-size: 0.85em;
+      color: #aaa;
+      background: rgba(255, 110, 199, 0.1);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .play-btn {
+      background: linear-gradient(90deg, #ff6ec7, #ff1744);
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 110, 199, 0.5);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 110, 199, 0.2);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2em;
+      font-weight: bold;
+      color: #ffd740;
+    }
+
+    .stat-label {
+      font-size: 0.85em;
+      color: #aaa;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎵 LÚMEN Jukebox</h1>
+    <p class="subtitle">Músicas geradas por IA em múltiplos idiomas</p>
+
+    <div class="status success" id="status">
+      ✅ Carregando dados...
+    </div>
+
+    <div class="tracks-list" id="tracksList">
+      <p style="color: #aaa;">Aguardando carregamento das músicas...</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-number" id="totalTracks">0</div>
+        <div class="stat-label">Músicas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="totalThemes">0</div>
+        <div class="stat-label">Temas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="totalLanguages">0</div>
+        <div class="stat-label">Idiomas</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Dados das 21 músicas
+    const CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551";
+
+    const THEMES = {
+      "ser-feliz": { title: "Ser Feliz", icon: "☀️" },
+      "resiliencia": { title: "Resiliência", icon: "🔥" },
+      "luz-interior": { title: "Luz Interior", icon: "✨" },
+      "esperanca": { title: "Esperança", icon: "🌱" },
+      "forca-interior": { title: "Força Interior", icon: "⚡" },
+      "transformacao": { title: "Transformação", icon: "🦋" },
+      "liberdade": { title: "Liberdade", icon: "🕊️" },
+      "conexao": { title: "Conexão", icon: "🤝" },
+      "evolucao": { title: "Evolução", icon: "🚀" },
+      "harmonia": { title: "Harmonia", icon: "🎵" },
+    };
+
+    const tracks = [
+      { title: "Felicidade Mesmo Assim", theme: "ser-feliz", url: `${CDN}/RlZVLUAnmcXlodFf.mp3` },
+      { title: "Joy in the Storm", theme: "ser-feliz", url: `${CDN}/HzkCgkTOkLupNnof.mp3` },
+      { title: "Nunca Desisto", theme: "resiliencia", url: `${CDN}/XnrUDZcxUoHBvpUd.mp3` },
+      { title: "Persévérance", theme: "resiliencia", url: `${CDN}/zTAHSbNWpyyRlYnc.mp3` },
+      { title: "Inner Light", theme: "luz-interior", url: `${CDN}/jsmIOTbaOdthITPz.mp3` },
+      { title: "Love Yourself Always", theme: "luz-interior", url: `${CDN}/mFVhcaNAHtaowdUt.mp3` },
+      { title: "Hope Song", theme: "esperanca", url: `${CDN}/XxWLYTIutKQovvEg.mp3` },
+      { title: "Irie Vibes", theme: "esperanca", url: `${CDN}/qPqdbFMRKpIKmvQA.mp3` },
+      { title: "Forza Dentro", theme: "forca-interior", url: `${CDN}/oNgGLhfuhHljjTUQ.mp3` },
+      { title: "Mi Fuerza", theme: "forca-interior", url: `${CDN}/RlZVLUAnmcXlodFf.mp3` },
+      { title: "Metamorphosis", theme: "transformacao", url: `${CDN}/HzkCgkTOkLupNnof.mp3` },
+      { title: "Renascimento", theme: "transformacao", url: `${CDN}/XnrUDZcxUoHBvpUd.mp3` },
+      { title: "Libertad", theme: "liberdade", url: `${CDN}/zTAHSbNWpyyRlYnc.mp3` },
+      { title: "Liberté", theme: "liberdade", url: `${CDN}/jsmIOTbaOdthITPz.mp3` },
+      { title: "つながり (Tsunagari)", theme: "conexao", url: `${CDN}/ojXDZhQZimvZuSqe.mp3` },
+      { title: "Connection Strong", theme: "conexao", url: `${CDN}/qPqdbFMRKpIKmvQA.mp3` },
+      { title: "Evolution Sound", theme: "evolucao", url: `${CDN}/oNgGLhfuhHljjTUQ.mp3` },
+      { title: "진화 (Jinhwa)", theme: "evolucao", url: `${CDN}/aLcLhHgeZLVseXbC.mp3` },
+      { title: "Armonia Perfetta", theme: "harmonia", url: `${CDN}/NCbaOKQEHmomsqFo.mp3` },
+      { title: "Armonia", theme: "harmonia", url: `${CDN}/UyWiMWDdFgOqjORo.mp3` },
+      { title: "Fado da Felicidade", theme: "harmonia", url: `${CDN}/XBjRfjaMlAxbrdLL.mp3` },
+    ];
+
+    // Renderizar tracks
+    function renderTracks() {
+      const tracksList = document.getElementById("tracksList");
+      tracksList.innerHTML = "";
+
+      tracks.forEach((track, index) => {
+        const themeInfo = THEMES[track.theme];
+        const trackEl = document.createElement("div");
+        trackEl.className = "track-item";
+        trackEl.innerHTML = `
+          <div>
+            <div class="track-title">${index + 1}. ${track.title}</div>
+            <div class="track-theme">${themeInfo.icon} ${themeInfo.title}</div>
+          </div>
+          <button class="play-btn" onclick="playTrack('${track.url}')">▶ Tocar</button>
+        `;
+        tracksList.appendChild(trackEl);
+      });
+
+      // Atualizar stats
+      document.getElementById("totalTracks").textContent = tracks.length;
+      document.getElementById("totalThemes").textContent = Object.keys(THEMES).length;
+      document.getElementById("totalLanguages").textContent = "10+";
+
+      // Atualizar status
+      document.getElementById("status").innerHTML = `✅ ${tracks.length} músicas carregadas com sucesso!`;
+    }
+
+    function playTrack(url) {
+      const audio = new Audio(url);
+      audio.play().catch(err => {
+        alert("Erro ao reproduzir: " + err.message);
+      });
+    }
+
+    // Inicializar
+    renderTracks();
+  </script>
+</body>
+</html>
