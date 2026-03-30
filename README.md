@@ -1,19 +1,27 @@
 # 🎵 Jukeboxia — Jukebox Interativa Lúmen
 
-> *Uma jukebox interativa com 20 músicas geradas por IA em 10 estilos musicais e 10 idiomas — organizada em temas de amor-próprio e diversão.*
+> *Uma jukebox interativa com 21 músicas geradas por IA em 10 estilos musicais e 10 idiomas — organizada em temas de amor-próprio, resiliência e transformação.*
 
-**🌐 Acesse agora:** [alexandreken6-glitch.github.io/jukebox-ia](https://alexandreken6-glitch.github.io/jukebox-ia/)
+**🌐 Acesse agora:** [Ichi-go-Ichi-e-Producao.github.io/jukebox-ia](https://Ichi-go-Ichi-e-Producao.github.io/jukebox-ia/)
 
 ---
 
 ## Sobre o Projeto
 
-O Jukeboxia é parte do ecossistema **Lúmen** — um projeto musical que transforma conflitos internos em som. A jukebox reúne 20 faixas geradas por IA em dois universos temáticos:
+O Jukeboxia é parte do ecossistema **Lúmen** — um projeto musical que transforma conflitos internos em som. A jukebox reúne 21 faixas geradas por IA em 10 temas emocionais distintos:
 
 | Tema | Descrição |
 |---|---|
-| **Se Olha** | Amor-próprio, cura emocional, autoconhecimento |
-| **Viva!** | Diversão, energia, celebração da vida |
+| **Ser Feliz** | Alegria, celebração e positividade |
+| **Resiliência** | Força, superação e determinação |
+| **Luz Interior** | Autoconhecimento, introspecção e paz |
+| **Esperança** | Otimismo, fé e renovação |
+| **Força Interior** | Empoderamento, confiança e coragem |
+| **Transformação** | Mudança, evolução e renascimento |
+| **Liberdade** | Libertação, independência e voo |
+| **Conexão** | Relacionamentos, empatia e união |
+| **Evolução** | Crescimento, aprendizado e progresso |
+| **Harmonia** | Equilíbrio, paz e serenidade |
 
 Cada estilo musical tem sua própria cor e bandeira, criando uma experiência visual e sonora única. Os 10 estilos incluem trap emocional, bossa nova, J-pop, reggaeton, lo-fi e mais.
 
@@ -43,9 +51,10 @@ Cada estilo musical tem sua própria cor e bandeira, criando uma experiência vi
 
 | Projeto | Link |
 |---|---|
-| 🌐 Lúmen Hub (site principal) | [lumen-hub.manus.space](https://lumen-hub.manus.space) |
-| 🎵 Jukeboxia | [alexandreken6-glitch.github.io/jukebox-ia](https://alexandreken6-glitch.github.io/jukebox-ia/) |
+| 🌐 Lúmen Hub (site principal) | [lumentrap-5vwtepkc.manus.space](https://lumentrap-5vwtepkc.manus.space) |
+| 🎵 Jukeboxia | [Ichi-go-Ichi-e-Producao.github.io/jukebox-ia](https://Ichi-go-Ichi-e-Producao.github.io/jukebox-ia/) |
 | 🛍️ Loja Ichigo Ichie Yume | [ichigoichieyume.myshopify.com](https://ichigoichieyume.myshopify.com) |
+| 🎵 Bandcamp | [alexandremarquesmigiyama.bandcamp.com](https://alexandremarquesmigiyama.bandcamp.com) |
 
 ---
 
@@ -61,7 +70,7 @@ Se o Jukeboxia tocou sua alma, considere apoiar o projeto:
 ## Rodando Localmente
 
 ```bash
-git clone https://github.com/alexandreken6-glitch/jukebox-ia.git
+git clone https://github.com/Ichi-go-Ichi-e-Producao/jukebox-ia.git
 cd jukebox-ia
 pnpm install
 pnpm dev
