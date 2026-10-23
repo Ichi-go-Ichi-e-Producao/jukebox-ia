@@ -274,6 +274,12 @@ export default function Home() {
                 Apoiar no Ko-fi
               </a>
             </div>
+            <a
+              href="./privacy.html"
+              className="mt-3 inline-block text-[10px] text-white/40 underline-offset-4 transition-colors hover:text-purple-300 hover:underline"
+            >
+              Política de Privacidade
+            </a>
           </div>
         </div>
       </section>
