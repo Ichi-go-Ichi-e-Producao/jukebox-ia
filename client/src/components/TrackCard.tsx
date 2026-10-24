@@ -1,6 +1,6 @@
 /* DESIGN: Neon Vinyl Lounge — Each card glows with genre-specific neon color */
 import { motion } from "framer-motion";
-import { Play, Pause } from "lucide-react";
+import { ExternalLink, Play, Pause } from "lucide-react";
 import type { Track } from "@/lib/musicData";
 
 interface TrackCardProps {
@@ -105,6 +105,18 @@ export default function TrackCard({ track, isActive, isPlaying, onPlay, index }:
             <p className="text-xs text-white/40 mt-0.5">
               {track.language} · {track.country}
             </p>
+            {track.isOfficial && track.spotifyUrl && (
+              <a
+                href={track.spotifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(event) => event.stopPropagation()}
+                className="mt-2 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider transition-colors hover:brightness-125"
+                style={{ color: "#1ed760" }}
+              >
+                Oficial no Spotify <ExternalLink className="h-3 w-3" />
+              </a>
+            )}
           </div>
 
           {/* Audio bars indicator */}

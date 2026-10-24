@@ -26,8 +26,11 @@ const THEME_COLORS: Record<ThemeId, { main: string; rgb: string }> = {
   "liberdade":     { main: "#00bcd4", rgb: "0, 188, 212" },
   "conexao":       { main: "#2196f3", rgb: "33, 150, 243" },
   "evolucao":      { main: "#e91e63", rgb: "233, 30, 99" },
-  "harmonia":      { main: "#8bc34a", rgb: "139, 195, 74" },
+  "harmonia":      { main: "#8bc34a", rgb: "139, 190, 74" },
+  "lumen-trap-oficiais": { main: "#1ed760", rgb: "30, 215, 96" },
 };
+
+const SPOTIFY_ARTIST_URL = "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o";
 
 export default function Home() {
   const [activeTheme, setActiveTheme] = useState<ThemeId>("ser-feliz");
@@ -70,7 +73,7 @@ export default function Home() {
             <div className="flex items-center gap-3 mb-4">
               <Music className="w-5 h-5 text-pink-400" />
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-pink-400">
-                Powered by AI
+                Música sem fronteiras
               </span>
             </div>
             <h1
@@ -86,13 +89,23 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/60 max-w-xl leading-relaxed mb-2">
-              Músicas geradas por IA em{" "}
+              Faixas experimentais de IA e lançamentos{" "}
               <span className="text-cyan-400 font-semibold">múltiplos idiomas</span> e{" "}
-              <span className="text-amber-400 font-semibold">estilos musicais</span> diferentes.
+              <span className="text-amber-400 font-semibold">oficiais da Lúmen Trap</span>.
             </p>
             <p className="text-sm text-white/40">
-              Todas as músicas foram geradas por inteligência artificial. Cada uma é única.
+              As faixas oficiais são distribuídas nas plataformas de streaming; o catálogo de IA segue como laboratório criativo.
             </p>
+
+            <a
+              href={SPOTIFY_ARTIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all hover:scale-105"
+              style={{ borderColor: "rgba(30,215,96,0.45)", color: "#1ed760", background: "rgba(30,215,96,0.08)" }}
+            >
+              Lúmen Trap no Spotify ↗
+            </a>
 
             {/* Stats */}
             <div className="flex flex-wrap gap-6 mt-8">
@@ -254,7 +267,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <p className="text-xs text-white/20 mb-1">Criado com IA · Suno AI · Jukebox IA Multilíngue</p>
+            <p className="text-xs text-white/20 mb-1">Catálogo IA multilíngue + lançamentos oficiais Lúmen Trap</p>
             <a href="https://lumen-hub.manus.space" target="_blank" rel="noopener noreferrer"
                className="text-xs font-semibold tracking-widest transition-colors hover:text-purple-300"
                style={{ color: "rgba(168,85,247,0.6)" }}>

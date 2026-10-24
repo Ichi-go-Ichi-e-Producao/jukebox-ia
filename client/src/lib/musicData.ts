@@ -18,6 +18,8 @@ export interface Track {
   audioUrl: string;
   audioUrlAlt: string;
   theme: ThemeId;
+  isOfficial?: boolean;
+  spotifyUrl?: string;
 }
 
 export type ThemeId =
@@ -30,9 +32,17 @@ export type ThemeId =
   | "liberdade"
   | "conexao"
   | "evolucao"
-  | "harmonia";
+  | "harmonia"
+  | "lumen-trap-oficiais";
 
 export const THEMES: Record<ThemeId, { id: ThemeId; title: string; subtitle: string; description: string; icon: string }> = {
+  "lumen-trap-oficiais": {
+    id: "lumen-trap-oficiais",
+    title: "Lúmen Trap · Oficiais",
+    subtitle: "Lançamentos oficiais já distribuídos",
+    description: "Faixas oficiais da Lúmen Trap, também disponíveis no Spotify.",
+    icon: "✦",
+  },
   "ser-feliz": {
     id: "ser-feliz",
     title: "Ser Feliz",
@@ -399,6 +409,98 @@ export const tracks: Track[] = [
     audioUrl: `${CDN}/XBjRfjaMlAxbrdLL.mp3`,
     audioUrlAlt: `${CDN}/zTAHSbNWpyyRlYnc.mp3`,
     theme: "harmonia",
+  },
+
+  // ========== LÚMEN TRAP · LANÇAMENTOS OFICIAIS ==========
+  {
+    id: "lumen-trap-mesmo-depois-de-tanto-tempo",
+    title: "Mesmo Depois de Tanto Tempo",
+    style: "Lúmen Trap",
+    language: "Português",
+    flag: "🇧🇷",
+    country: "Brasil",
+    neonColor: "#c084fc",
+    neonColorRgb: "192, 132, 252",
+    audioUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/fgXFCOnFxZpCWLjj.mp3",
+    audioUrlAlt: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/fgXFCOnFxZpCWLjj.mp3",
+    theme: "lumen-trap-oficiais",
+    isOfficial: true,
+    spotifyUrl: "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o",
+  },
+  {
+    id: "lumen-trap-seu-nome-no-meu-silencio-522",
+    title: "Seu Nome no Meu Silêncio · 5:22",
+    style: "Lúmen Trap",
+    language: "Português",
+    flag: "🇧🇷",
+    country: "Brasil",
+    neonColor: "#f472b6",
+    neonColorRgb: "244, 114, 182",
+    audioUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/PrfDvadfEojmYoXV.mp3",
+    audioUrlAlt: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/PrfDvadfEojmYoXV.mp3",
+    theme: "lumen-trap-oficiais",
+    isOfficial: true,
+    spotifyUrl: "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o",
+  },
+  {
+    id: "lumen-trap-em-todas-as-vidas",
+    title: "Em Todas as Vidas",
+    style: "Lúmen Trap",
+    language: "Português",
+    flag: "🇧🇷",
+    country: "Brasil",
+    neonColor: "#22d3ee",
+    neonColorRgb: "34, 211, 238",
+    audioUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/SilxUpUrYwsRxmoT.mp3",
+    audioUrlAlt: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/SilxUpUrYwsRxmoT.mp3",
+    theme: "lumen-trap-oficiais",
+    isOfficial: true,
+    spotifyUrl: "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o",
+  },
+  {
+    id: "lumen-trap-seu-nome-no-meu-silencio-510",
+    title: "Seu Nome no Meu Silêncio · 5:10",
+    style: "Lúmen Trap",
+    language: "Português",
+    flag: "🇧🇷",
+    country: "Brasil",
+    neonColor: "#fb7185",
+    neonColorRgb: "251, 113, 133",
+    audioUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/CWUAtsRnyeEwbdrV.mp3",
+    audioUrlAlt: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/CWUAtsRnyeEwbdrV.mp3",
+    theme: "lumen-trap-oficiais",
+    isOfficial: true,
+    spotifyUrl: "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o",
+  },
+  {
+    id: "lumen-trap-barulho-na-cabeca",
+    title: "Barulho na Cabeça",
+    style: "Lúmen Trap",
+    language: "Português",
+    flag: "🇧🇷",
+    country: "Brasil",
+    neonColor: "#facc15",
+    neonColorRgb: "250, 204, 21",
+    audioUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/gtEYpZWwBperuWxX.mp3",
+    audioUrlAlt: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/gtEYpZWwBperuWxX.mp3",
+    theme: "lumen-trap-oficiais",
+    isOfficial: true,
+    spotifyUrl: "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o",
+  },
+  {
+    id: "lumen-trap-a-ultima-cancao-de-amor",
+    title: "A Última Canção de Amor",
+    style: "Lúmen Trap",
+    language: "Português",
+    flag: "🇧🇷",
+    country: "Brasil",
+    neonColor: "#a3e635",
+    neonColorRgb: "163, 230, 53",
+    audioUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/fVhyaBCwhlQfvNoV.mp3",
+    audioUrlAlt: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/fVhyaBCwhlQfvNoV.mp3",
+    theme: "lumen-trap-oficiais",
+    isOfficial: true,
+    spotifyUrl: "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o",
   },
 ];
 
