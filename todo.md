@@ -7,4 +7,4 @@
 - [x] Criar a categoria Lúmen Trap — Oficiais no catálogo com metadados e destaque para o perfil Spotify
 - [x] Adicionar as faixas oficiais ao player sem modificar o catálogo temático existente
 - [x] Validar reprodução, links externos, TypeScript e build de produção
-- [ ] Publicar no GitHub Pages e confirmar a versão pública
+- [x] Publicar no GitHub Pages e confirmar a versão pública
