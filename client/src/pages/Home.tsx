@@ -28,6 +28,7 @@ const THEME_COLORS: Record<ThemeId, { main: string; rgb: string }> = {
   "evolucao":      { main: "#e91e63", rgb: "233, 30, 99" },
   "harmonia":      { main: "#8bc34a", rgb: "139, 190, 74" },
   "lumen-trap-oficiais": { main: "#1ed760", rgb: "30, 215, 96" },
+  "lumen-trap-exclusivas": { main: "#fb7185", rgb: "251, 113, 133" },
 };
 
 const SPOTIFY_ARTIST_URL = "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o";

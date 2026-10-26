@@ -14,3 +14,11 @@
 - [x] Apontar Seu Nome No Meu Silêncio — Radio Edit para a faixa oficial de 5:22 no Spotify
 - [x] Retirar a master de 5:10 da vitrine de faixas distribuídas
 - [x] Validar e republicar o catálogo corrigido
+
+## Quando O Amor Responde
+
+- [x] Identificar e separar os dois masters recebidos: 4:53 para distribuição e 5:05 para o Jukeboxia
+- [x] Criar uma categoria de versões exclusivas da Lúmen Trap no Jukeboxia
+- [x] Publicar a versão exclusiva de 5:05 em CDN e adicioná-la ao player
+- [x] Validar a nova faixa no TypeScript, build de produção e URL de áudio
+- [ ] Publicar a nova faixa no GitHub Pages após substituir a credencial GitHub exposta

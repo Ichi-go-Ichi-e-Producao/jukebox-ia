@@ -19,6 +19,7 @@ export interface Track {
   audioUrlAlt: string;
   theme: ThemeId;
   isOfficial?: boolean;
+  isExclusive?: boolean;
   spotifyUrl?: string;
 }
 
@@ -33,7 +34,8 @@ export type ThemeId =
   | "conexao"
   | "evolucao"
   | "harmonia"
-  | "lumen-trap-oficiais";
+  | "lumen-trap-oficiais"
+  | "lumen-trap-exclusivas";
 
 export const THEMES: Record<ThemeId, { id: ThemeId; title: string; subtitle: string; description: string; icon: string }> = {
   "lumen-trap-oficiais": {
@@ -42,6 +44,13 @@ export const THEMES: Record<ThemeId, { id: ThemeId; title: string; subtitle: str
     subtitle: "Lançamentos oficiais já distribuídos",
     description: "Faixas oficiais da Lúmen Trap, também disponíveis no Spotify.",
     icon: "✦",
+  },
+  "lumen-trap-exclusivas": {
+    id: "lumen-trap-exclusivas",
+    title: "Lúmen Trap · Exclusivas",
+    subtitle: "Versões especiais que vivem primeiro aqui",
+    description: "Masters e versões exclusivas da Lúmen Trap disponíveis somente no Jukeboxia.",
+    icon: "◈",
   },
   "ser-feliz": {
     id: "ser-feliz",
@@ -486,6 +495,21 @@ export const tracks: Track[] = [
     theme: "lumen-trap-oficiais",
     isOfficial: true,
     spotifyUrl: "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o",
+  },
+  // ========== LÚMEN TRAP · VERSÕES EXCLUSIVAS DO JUKEBOXIA ==========
+  {
+    id: "lumen-trap-quando-o-amor-responde-exclusiva",
+    title: "Quando o Amor Responde — Versão Exclusiva",
+    style: "Lúmen Trap",
+    language: "Português",
+    flag: "🇧🇷",
+    country: "Brasil",
+    neonColor: "#fb7185",
+    neonColorRgb: "251, 113, 133",
+    audioUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/lkNyxFwqFWbXGAfL.mp3",
+    audioUrlAlt: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/lkNyxFwqFWbXGAfL.mp3",
+    theme: "lumen-trap-exclusivas",
+    isExclusive: true,
   },
 ];
 

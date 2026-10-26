@@ -105,6 +105,14 @@ export default function TrackCard({ track, isActive, isPlaying, onPlay, index }:
             <p className="text-xs text-white/40 mt-0.5">
               {track.language} · {track.country}
             </p>
+            {track.isExclusive && (
+              <span
+                className="mt-2 inline-flex text-[10px] font-bold uppercase tracking-wider"
+                style={{ color: track.neonColor }}
+              >
+                Exclusiva no Jukeboxia
+              </span>
+            )}
             {track.isOfficial && track.spotifyUrl && (
               <a
                 href={track.spotifyUrl}
