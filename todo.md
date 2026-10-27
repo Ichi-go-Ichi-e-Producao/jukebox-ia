@@ -22,5 +22,5 @@
 - [x] Publicar a versão exclusiva de 5:05 em CDN e adicioná-la ao player
 - [x] Validar a nova faixa no TypeScript, build de produção e URL de áudio
 - [x] Publicar a nova faixa no GitHub Pages e confirmar a categoria pública
-- [ ] Tornar a leitura de duração do player robusta para masters exclusivos e validar a reprodução pública
+- [x] Tornar a leitura de duração do player robusta e validar a duração na interface pública
 - [x] Exibir a duração catalogada da versão exclusiva enquanto os metadados de áudio carregam
