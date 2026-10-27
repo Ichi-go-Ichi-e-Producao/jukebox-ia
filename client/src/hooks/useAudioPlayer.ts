@@ -19,20 +19,28 @@ export function useAudioPlayer() {
       setCurrentTime(audio.currentTime);
       setProgress(audio.duration ? (audio.currentTime / audio.duration) * 100 : 0);
     };
-    const onLoadedMetadata = () => setDuration(audio.duration);
+    const syncDuration = () => {
+      if (Number.isFinite(audio.duration) && audio.duration > 0) {
+        setDuration(audio.duration);
+      }
+    };
     const onEnded = () => { setIsPlaying(false); setProgress(0); setCurrentTime(0); };
     const onPlay = () => setIsPlaying(true);
     const onPause = () => setIsPlaying(false);
 
     audio.addEventListener("timeupdate", onTimeUpdate);
-    audio.addEventListener("loadedmetadata", onLoadedMetadata);
+    audio.addEventListener("loadedmetadata", syncDuration);
+    audio.addEventListener("durationchange", syncDuration);
+    audio.addEventListener("canplay", syncDuration);
     audio.addEventListener("ended", onEnded);
     audio.addEventListener("play", onPlay);
     audio.addEventListener("pause", onPause);
 
     return () => {
       audio.removeEventListener("timeupdate", onTimeUpdate);
-      audio.removeEventListener("loadedmetadata", onLoadedMetadata);
+      audio.removeEventListener("loadedmetadata", syncDuration);
+      audio.removeEventListener("durationchange", syncDuration);
+      audio.removeEventListener("canplay", syncDuration);
       audio.removeEventListener("ended", onEnded);
       audio.removeEventListener("play", onPlay);
       audio.removeEventListener("pause", onPause);
@@ -52,8 +60,12 @@ export function useAudioPlayer() {
     }
 
     audio.pause();
+    setDuration(0);
     audio.src = useAlt ? track.audioUrlAlt : track.audioUrl;
     audio.load();
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+      setDuration(audio.duration);
+    }
     audio.play().catch(() => {});
     setCurrentTrack(track);
     setProgress(0);

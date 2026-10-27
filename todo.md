@@ -21,4 +21,5 @@
 - [x] Criar uma categoria de versões exclusivas da Lúmen Trap no Jukeboxia
 - [x] Publicar a versão exclusiva de 5:05 em CDN e adicioná-la ao player
 - [x] Validar a nova faixa no TypeScript, build de produção e URL de áudio
-- [ ] Publicar a nova faixa no GitHub Pages após substituir a credencial GitHub exposta
+- [x] Publicar a nova faixa no GitHub Pages e confirmar a categoria pública
+- [ ] Tornar a leitura de duração do player robusta para masters exclusivos e validar a reprodução pública
