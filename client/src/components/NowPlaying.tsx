@@ -35,6 +35,10 @@ export default function NowPlaying({
 }: NowPlayingProps) {
   if (!track) return null;
 
+  const displayDuration = Number.isFinite(duration) && duration > 0
+    ? duration
+    : (track.durationSeconds ?? 0);
+
   const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const pct = ((e.clientX - rect.left) / rect.width) * 100;
@@ -115,7 +119,7 @@ export default function NowPlaying({
           {/* Controls */}
           <div className="flex items-center gap-3 shrink-0">
             <span className="text-xs text-white/40 hidden sm:block">
-              {formatTime(currentTime)} / {formatTime(duration)}
+              {formatTime(currentTime)} / {formatTime(displayDuration)}
             </span>
 
             {/* Toggle version button */}

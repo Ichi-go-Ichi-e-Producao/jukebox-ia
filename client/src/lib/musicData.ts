@@ -17,6 +17,7 @@ export interface Track {
   neonColorRgb: string;
   audioUrl: string;
   audioUrlAlt: string;
+  durationSeconds?: number;
   theme: ThemeId;
   isOfficial?: boolean;
   isExclusive?: boolean;
@@ -508,6 +509,7 @@ export const tracks: Track[] = [
     neonColorRgb: "251, 113, 133",
     audioUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/lkNyxFwqFWbXGAfL.mp3",
     audioUrlAlt: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/lkNyxFwqFWbXGAfL.mp3",
+    durationSeconds: 305,
     theme: "lumen-trap-exclusivas",
     isExclusive: true,
   },
