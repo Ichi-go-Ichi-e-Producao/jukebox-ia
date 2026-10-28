@@ -113,17 +113,32 @@ export default function TrackCard({ track, isActive, isPlaying, onPlay, index }:
                 Exclusiva no Jukeboxia
               </span>
             )}
-            {track.isOfficial && track.spotifyUrl && (
-              <a
-                href={track.spotifyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(event) => event.stopPropagation()}
-                className="mt-2 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider transition-colors hover:brightness-125"
-                style={{ color: "#1ed760" }}
-              >
-                Oficial no Spotify <ExternalLink className="h-3 w-3" />
-              </a>
+            {track.isOfficial && (track.spotifyUrl || track.appleMusicUrl) && (
+              <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                {track.spotifyUrl && (
+                  <a
+                    href={track.spotifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(event) => event.stopPropagation()}
+                    className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider transition-colors hover:brightness-125"
+                    style={{ color: "#1ed760" }}
+                  >
+                    Spotify <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
+                {track.appleMusicUrl && (
+                  <a
+                    href={track.appleMusicUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(event) => event.stopPropagation()}
+                    className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-pink-300 transition-colors hover:text-pink-200"
+                  >
+                    Apple Music <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
+              </div>
             )}
           </div>
 

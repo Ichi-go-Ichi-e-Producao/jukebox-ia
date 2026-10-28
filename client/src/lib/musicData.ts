@@ -22,6 +22,7 @@ export interface Track {
   isOfficial?: boolean;
   isExclusive?: boolean;
   spotifyUrl?: string;
+  appleMusicUrl?: string;
 }
 
 export type ThemeId =
@@ -43,7 +44,7 @@ export const THEMES: Record<ThemeId, { id: ThemeId; title: string; subtitle: str
     id: "lumen-trap-oficiais",
     title: "Lúmen Trap · Oficiais",
     subtitle: "Lançamentos oficiais já distribuídos",
-    description: "Faixas oficiais da Lúmen Trap, também disponíveis no Spotify.",
+    description: "Faixas oficiais da Lúmen Trap disponíveis nas plataformas de streaming.",
     icon: "✦",
   },
   "lumen-trap-exclusivas": {
@@ -422,6 +423,23 @@ export const tracks: Track[] = [
   },
 
   // ========== LÚMEN TRAP · LANÇAMENTOS OFICIAIS ==========
+  {
+    id: "lumen-trap-quando-o-amor-responde-oficial",
+    title: "Quando O Amor Responde",
+    style: "Lúmen Trap",
+    language: "Português",
+    flag: "🇧🇷",
+    country: "Brasil",
+    neonColor: "#1ed760",
+    neonColorRgb: "30, 215, 96",
+    audioUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/UXKYbJVfWePIHQnm.mp3",
+    audioUrlAlt: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551/UXKYbJVfWePIHQnm.mp3",
+    durationSeconds: 293,
+    theme: "lumen-trap-oficiais",
+    isOfficial: true,
+    spotifyUrl: "https://open.spotify.com/album/6p4Xq5fS9Zga0Bf1g8MFix",
+    appleMusicUrl: "https://music.apple.com/us/album/quando-o-amor-responde-single/6827410725",
+  },
   {
     id: "lumen-trap-mesmo-depois-de-tanto-tempo",
     title: "Mesmo Depois de Tanto Tempo",
