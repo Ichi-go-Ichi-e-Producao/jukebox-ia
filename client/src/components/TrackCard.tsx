@@ -12,13 +12,17 @@ interface TrackCardProps {
 }
 
 export default function TrackCard({ track, isActive, isPlaying, onPlay, index }: TrackCardProps) {
+  const canPlayInJukebox = Boolean(track.audioUrl) && !track.isStreamingOnly;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.06, duration: 0.4 }}
-      onClick={() => onPlay(track)}
-      className="group relative cursor-pointer"
+      onClick={() => {
+        if (canPlayInJukebox) onPlay(track);
+      }}
+      className={`group relative ${canPlayInJukebox ? "cursor-pointer" : "cursor-default"}`}
     >
       <div
         className={`relative overflow-hidden rounded-xl p-4 transition-all duration-300 ${
@@ -69,9 +73,11 @@ export default function TrackCard({ track, isActive, isPlaying, onPlay, index }:
             >
               <div className="absolute inset-[35%] rounded-full" style={{ background: track.neonColor + "40" }} />
             </div>
-            {/* Play/Pause icon */}
+            {/* Play/Pause ou destino de streaming */}
             <div className="relative z-10">
-              {isActive && isPlaying ? (
+              {!canPlayInJukebox ? (
+                <ExternalLink className="w-5 h-5" style={{ color: track.neonColor }} />
+              ) : isActive && isPlaying ? (
                 <Pause className="w-5 h-5" style={{ color: track.neonColor }} />
               ) : (
                 <Play className="w-5 h-5 ml-0.5" style={{ color: isActive ? track.neonColor : "rgba(255,255,255,0.6)" }} />
@@ -113,6 +119,14 @@ export default function TrackCard({ track, isActive, isPlaying, onPlay, index }:
                 Exclusiva no Jukeboxia
               </span>
             )}
+            {track.isStreamingOnly && (
+              <span
+                className="mt-2 inline-flex text-[10px] font-bold uppercase tracking-wider"
+                style={{ color: track.neonColor }}
+              >
+                Lançamento no streaming
+              </span>
+            )}
             {track.isOfficial && (track.spotifyUrl || track.appleMusicUrl) && (
               <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
                 {track.spotifyUrl && (
@@ -121,10 +135,10 @@ export default function TrackCard({ track, isActive, isPlaying, onPlay, index }:
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(event) => event.stopPropagation()}
-                    className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider transition-colors hover:brightness-125"
-                    style={{ color: "#1ed760" }}
-                  >
-                    Spotify <ExternalLink className="h-3 w-3" />
+                  className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider transition-colors hover:brightness-125"
+                  style={{ color: "#1ed760" }}
+                >
+                    {track.isStreamingOnly ? "Ouvir no Spotify" : "Spotify"} <ExternalLink className="h-3 w-3" />
                   </a>
                 )}
                 {track.appleMusicUrl && (

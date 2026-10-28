@@ -24,3 +24,15 @@
 - [x] Publicar a nova faixa no GitHub Pages e confirmar a categoria pública
 - [x] Tornar a leitura de duração do player robusta e validar a duração na interface pública
 - [x] Exibir a duração catalogada da versão exclusiva enquanto os metadados de áudio carregam
+- [x] Adicionar a versão distribuída de 4:53 à categoria Lúmen Trap · Oficiais com destinos de Spotify e Apple Music
+- [x] Preservar a versão exclusiva de 5:05 separada no Jukeboxia e validar o catálogo publicado
+
+## Conciliação do catálogo Spotify
+
+- [x] Confirmar títulos, versões e duração dos seis links únicos enviados para evitar duplicidades
+- [x] Comparar os lançamentos confirmados com o catálogo oficial atual do Jukeboxia
+- [x] Registrar as faixas oficiais que ainda exigem masters de áudio antes de entrarem no player
+- [x] Auditar a discografia de 13 lançamentos do perfil Lúmen Trap no Spotify e registrar o catálogo mestre
+- [x] Atualizar os seis cards com master local para os nomes e links diretos oficiais do Spotify
+- [x] Exibir os sete lançamentos restantes como catálogo oficial de streaming, sem simular reprodução no Jukeboxia
+- [ ] Validar e publicar o catálogo oficial completo com 13 lançamentos

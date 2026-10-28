@@ -51,7 +51,7 @@ export function useAudioPlayer() {
 
   const play = useCallback((track: Track) => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio || !track.audioUrl) return;
 
     if (currentTrack?.id === track.id) {
       if (audio.paused) audio.play();
@@ -61,7 +61,7 @@ export function useAudioPlayer() {
 
     audio.pause();
     setDuration(0);
-    audio.src = useAlt ? track.audioUrlAlt : track.audioUrl;
+    audio.src = useAlt ? (track.audioUrlAlt ?? track.audioUrl) : track.audioUrl;
     audio.load();
     if (Number.isFinite(audio.duration) && audio.duration > 0) {
       setDuration(audio.duration);
@@ -85,10 +85,10 @@ export function useAudioPlayer() {
   const toggleVersion = useCallback(() => {
     setUseAlt((prev) => {
       const next = !prev;
-      if (currentTrack && audioRef.current) {
+      if (currentTrack?.audioUrl && audioRef.current) {
         const wasPlaying = !audioRef.current.paused;
         const time = audioRef.current.currentTime;
-        audioRef.current.src = next ? currentTrack.audioUrlAlt : currentTrack.audioUrl;
+        audioRef.current.src = next ? (currentTrack.audioUrlAlt ?? currentTrack.audioUrl) : currentTrack.audioUrl;
         audioRef.current.load();
         audioRef.current.currentTime = time;
         if (wasPlaying) audioRef.current.play().catch(() => {});
