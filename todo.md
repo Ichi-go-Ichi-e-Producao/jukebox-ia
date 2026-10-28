@@ -35,4 +35,4 @@
 - [x] Auditar a discografia de 13 lançamentos do perfil Lúmen Trap no Spotify e registrar o catálogo mestre
 - [x] Atualizar os seis cards com master local para os nomes e links diretos oficiais do Spotify
 - [x] Exibir os sete lançamentos restantes como catálogo oficial de streaming, sem simular reprodução no Jukeboxia
-- [ ] Validar e publicar o catálogo oficial completo com 13 lançamentos
+- [x] Validar e publicar o catálogo oficial completo com 13 lançamentos
