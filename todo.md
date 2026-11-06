@@ -49,6 +49,8 @@ Pedido: seis músicas alegres inspiradas em seis países, três sobre Família e
 - [x] Preparar categorias Família e Amizade e destacar o bônus sem alterar os 13 lançamentos oficiais
 - [x] Publicar os áudios validados em CDN e registrar URLs e hashes no manifesto de entrega
 - [x] Validar TypeScript, build e reprodução dos sete cards antes de publicar no GitHub Pages
-- [ ] Entregar as faixas para audição e registrar separadamente o resultado da publicação no Jukeboxia
+- [x] Entregar as faixas para audição e registrar separadamente o resultado da publicação no Jukeboxia
 
 Validação local: sete MP3 estéreo a 192 kbps, decodificação completa, hashes distintos e encerramentos checados por transcrição automática. A versão japonesa foi refeita antes da integração. Os 35 registros anteriores ficaram idênticos; o catálogo agora tem 42 faixas, com os 13 oficiais preservados. TypeScript e build passaram, assim como seis testes de regressão. No navegador, após um clique real para liberar autoplay, as sete faixas reproduziram, avançaram no tempo e aceitaram busca para 30 segundos sem erro de áudio.
+
+Publicação confirmada: commit 0451a1340eaed019eabf459094070a3c05ac8bc5, GitHub Actions 42275123500 concluído com sucesso. URL pública https://ichi-go-ichi-e-producao.github.io/jukebox-ia/ verificada no navegador; os sete cards e áudios reproduziram após aguardar o carregamento real. Pacote de entrega em /home/ubuntu/music-assets/familia-amizade-mundo-20261107/Lumen-Familia-Amizade-e-Forro.zip, com sete MP3 finais, letras, prompts e manifestos. Nenhum crédito Suno/Kie foi utilizado nesta produção.
