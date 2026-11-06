@@ -29,12 +29,15 @@ const THEME_COLORS: Record<ThemeId, { main: string; rgb: string }> = {
   "harmonia":      { main: "#8bc34a", rgb: "139, 190, 74" },
   "lumen-trap-oficiais": { main: "#1ed760", rgb: "30, 215, 96" },
   "lumen-trap-exclusivas": { main: "#fb7185", rgb: "251, 113, 133" },
+  "familia": { main: "#fb7185", rgb: "251, 113, 133" },
+  "amizade": { main: "#22d3ee", rgb: "34, 211, 238" },
+  "brasil-em-festa": { main: "#fbbf24", rgb: "251, 191, 36" },
 };
 
 const SPOTIFY_ARTIST_URL = "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o";
 
 export default function Home() {
-  const [activeTheme, setActiveTheme] = useState<ThemeId>("ser-feliz");
+  const [activeTheme, setActiveTheme] = useState<ThemeId>("familia");
   const player = useAudioPlayer();
   const themeTracks = getTracksByTheme(activeTheme);
   const themeInfo = THEMES[activeTheme];

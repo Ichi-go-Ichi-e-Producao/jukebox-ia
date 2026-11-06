@@ -1,8 +1,9 @@
 /**
- * LÚMEN Jukebox - 21 Músicas Completas
- * Integração de 13 músicas Kie API + 8 Suno
- * 10 temas, 10 idiomas, 10+ estilos musicais
+ * LÚMEN Jukeboxia — catálogo temático de IA e lançamentos Lúmen Trap.
+ * A coleção Família e Amizade permanece separada das faixas distribuídas.
  */
+
+import { familiaAmizadeTracks } from "./familiaAmizadeTracks";
 
 const CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551";
 
@@ -38,9 +39,33 @@ export type ThemeId =
   | "evolucao"
   | "harmonia"
   | "lumen-trap-oficiais"
-  | "lumen-trap-exclusivas";
+  | "lumen-trap-exclusivas"
+  | "familia"
+  | "amizade"
+  | "brasil-em-festa";
 
 export const THEMES: Record<ThemeId, { id: ThemeId; title: string; subtitle: string; description: string; icon: string }> = {
+  "familia": {
+    id: "familia",
+    title: "Família",
+    subtitle: "Reencontros, gerações e laços escolhidos",
+    description: "Três composições originais geradas com IA, em português, com inspirações no funaná de Cabo Verde, no son cubano e no kwela sul-africano. Novas faixas do laboratório criativo, ainda não distribuídas.",
+    icon: "⌂",
+  },
+  "amizade": {
+    id: "amizade",
+    title: "Amizade",
+    subtitle: "Um abraço atravessa fronteiras",
+    description: "Três composições originais geradas com IA, em português, inspiradas no ska jamaicano, na cumbia colombiana e em texturas festivas do Japão. Novas faixas do laboratório criativo, ainda não distribuídas.",
+    icon: "∞",
+  },
+  "brasil-em-festa": {
+    id: "brasil-em-festa",
+    title: "Brasil em Festa",
+    subtitle: "Bônus: forró de homenagem ao Nordeste",
+    description: "Janelas em Compasso celebra a diversidade, a cultura, o trabalho e a alegria do Nordeste com forró pé de serra. Composição original gerada com IA, ainda não distribuída nas plataformas.",
+    icon: "♫",
+  },
   "lumen-trap-oficiais": {
     id: "lumen-trap-oficiais",
     title: "Lúmen Trap · Oficiais",
@@ -128,6 +153,7 @@ export const THEMES: Record<ThemeId, { id: ThemeId; title: string; subtitle: str
 };
 
 export const tracks: Track[] = [
+  ...familiaAmizadeTracks,
   // ========== TEMA 1: SER FELIZ ==========
   {
     id: "ser-feliz-1",

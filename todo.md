@@ -36,3 +36,19 @@
 - [x] Atualizar os seis cards com master local para os nomes e links diretos oficiais do Spotify
 - [x] Exibir os sete lançamentos restantes como catálogo oficial de streaming, sem simular reprodução no Jukeboxia
 - [x] Validar e publicar o catálogo oficial completo com 13 lançamentos
+
+## Família, Amizade e forró do Nordeste — 7/11/2026
+
+Pedido: seis músicas alegres inspiradas em seis países, três sobre Família e três no tema escolhido pelo assistente, Amizade; um bônus de forró nordestino. Letras originais em português brasileiro. Novas músicas não são lançamentos DistroKid/Spotify e não devem receber selo oficial de distribuição.
+
+- [x] Compor as sete letras e arranjos, respeitando cada inspiração cultural
+- [x] Concluir a revisão dos refrões de Família e validar o manifesto de sete faixas
+- [x] Gerar sete MP3 distintos pelo Manus, com vocais em português e duração solicitada de 170 segundos; não usar Suno/Kie
+- [x] Ajustar somente a faixa do Japão após a transcrição detectar um final cortado na primeira geração
+- [x] Verificar arquivos, durações e decodificação; guardar áudios, letras e prompts para o proprietário
+- [x] Preparar categorias Família e Amizade e destacar o bônus sem alterar os 13 lançamentos oficiais
+- [x] Publicar os áudios validados em CDN e registrar URLs e hashes no manifesto de entrega
+- [x] Validar TypeScript, build e reprodução dos sete cards antes de publicar no GitHub Pages
+- [ ] Entregar as faixas para audição e registrar separadamente o resultado da publicação no Jukeboxia
+
+Validação local: sete MP3 estéreo a 192 kbps, decodificação completa, hashes distintos e encerramentos checados por transcrição automática. A versão japonesa foi refeita antes da integração. Os 35 registros anteriores ficaram idênticos; o catálogo agora tem 42 faixas, com os 13 oficiais preservados. TypeScript e build passaram, assim como seis testes de regressão. No navegador, após um clique real para liberar autoplay, as sete faixas reproduziram, avançaram no tempo e aceitaram busca para 30 segundos sem erro de áudio.
