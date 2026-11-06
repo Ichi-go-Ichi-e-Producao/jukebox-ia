@@ -111,6 +111,11 @@ export default function TrackCard({ track, isActive, isPlaying, onPlay, index }:
             <p className="text-xs text-white/40 mt-0.5">
               {track.language} · {track.country}
             </p>
+            {track.reviewNote && (
+              <p className="mt-2 text-[10px] leading-relaxed text-amber-200/80">
+                {track.reviewNote}
+              </p>
+            )}
             {track.isExclusive && (
               <span
                 className="mt-2 inline-flex text-[10px] font-bold uppercase tracking-wider"

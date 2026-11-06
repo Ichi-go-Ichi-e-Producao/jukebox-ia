@@ -54,3 +54,25 @@ Pedido: seis músicas alegres inspiradas em seis países, três sobre Família e
 Validação local: sete MP3 estéreo a 192 kbps, decodificação completa, hashes distintos e encerramentos checados por transcrição automática. A versão japonesa foi refeita antes da integração. Os 35 registros anteriores ficaram idênticos; o catálogo agora tem 42 faixas, com os 13 oficiais preservados. TypeScript e build passaram, assim como seis testes de regressão. No navegador, após um clique real para liberar autoplay, as sete faixas reproduziram, avançaram no tempo e aceitaram busca para 30 segundos sem erro de áudio.
 
 Publicação confirmada: commit 0451a1340eaed019eabf459094070a3c05ac8bc5, GitHub Actions 42275123500 concluído com sucesso. URL pública https://ichi-go-ichi-e-producao.github.io/jukebox-ia/ verificada no navegador; os sete cards e áudios reproduziram após aguardar o carregamento real. Pacote de entrega em /home/ubuntu/music-assets/familia-amizade-mundo-20261107/Lumen-Familia-Amizade-e-Forro.zip, com sete MP3 finais, letras, prompts e manifestos. Nenhum crédito Suno/Kie foi utilizado nesta produção.
+
+## Família e Amizade — adaptações internacionais — 7/11/2026
+
+Pedido: adaptar seis músicas ao idioma de cada país, preservar as versões PT-BR já aprovadas e colocá-las no catálogo temático multilíngue, mantendo a separação dos lançamentos oficiais. O forró permanece em português. Idiomas propostos, aguardando confirmação: Kriolu de Santiago, espanhol cubano, isiZulu, inglês jamaicano, espanhol colombiano e japonês. Não usar Suno/Kie nem distribuir comercialmente nesta tarefa.
+
+Plano: confirmar escolhas linguísticas; preparar seis letras cantáveis e prompts em arquivos separados; gerar os novos áudios apenas após confirmação; validar integridade, idioma e encerramento; integrar no Jukeboxia com separação clara de versões PT-BR; testar e publicar; propor cadência editorial sem configurar automação ou comprometer datas de distribuição.
+
+- [x] Confirmar com o usuário os seis idiomas, especialmente nos países multilíngues
+- [x] Preparar uma adaptação cantável por país, com referência linguística e tradução de apoio em PT-BR
+- [x] Gerar seis novos MP3 pelo Manus em paths distintos, sem substituir nenhum áudio aprovado
+- [x] Validar arquivos, duração, idioma e encerramento; não certificar revisão humana nativa inexistente
+- [x] Compactar e refazer somente Cuba e Colômbia após a transcrição das primeiras gerações detectar encerramentos incompletos
+- [x] Compactar e refazer isiZulu após a primeira geração também não alcançar o encerramento, usando só frases já revisadas
+- [x] Publicar apenas os áudios validados em CDN e guardar manifesto da nova edição
+- [ ] Finalizar o pacote de entrega com letras, traduções, prompts e seis MP3 finais, sem rascunhos
+- [x] Organizar as versões internacionais no catálogo temático, com as versões PT-BR separadas e os oficiais intactos
+- [ ] Executar TypeScript, testes de preservação, build e teste de reprodução; publicar e confirmar a URL pública
+- [x] Apresentar uma proposta de lançamento mensal com tema, países e idiomas, sem criar agenda automática ou enviar à distribuidora
+
+Validação pré-publicação: seis MP3 distintos com decodificação completa, durações reais de 163,76 a 179,25 s e sete MP3 PT-BR preservados por hash. Seis checagens textuais de geração não encontraram problema material inequívoco; não houve escuta ou revisão humana nativa. Kriolu e isiZulu possuem aviso visível de revisão linguística pendente no card. TypeScript, 12 testes de regressão e build passaram. Todos os 42 registros anteriores continuam idênticos, agora 48 no total e 13 oficiais. Na prévia, os seis áudios carregaram e progrediram sem erro após clique real; as categorias PT-BR, o forró e os oficiais foram conferidos.
+
+Proposta preparada: uma edição mensal com três faixas, um tema e três países; versões PT-BR paralelas e edições maiores ocasionais. Arquivo /home/ubuntu/music-assets/familia-amizade-idiomas-20261107/proposta-serie-mensal.md, com orientações oficiais do Spotify e da DistroKid. A cadência ainda não foi aprovada nem agendada. Usuário confirmou “Pode seguir com esses idiomas”: Kriolu de Santiago, espanhol cubano, isiZulu, inglês jamaicano, espanhol colombiano e japonês. Geração autorizada pelo Manus após preparação das letras; sem Suno/Kie e sem envio à distribuidora.

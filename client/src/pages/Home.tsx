@@ -32,12 +32,14 @@ const THEME_COLORS: Record<ThemeId, { main: string; rgb: string }> = {
   "familia": { main: "#fb7185", rgb: "251, 113, 133" },
   "amizade": { main: "#22d3ee", rgb: "34, 211, 238" },
   "brasil-em-festa": { main: "#fbbf24", rgb: "251, 191, 36" },
+  "familia-mundo": { main: "#f472b6", rgb: "244, 114, 182" },
+  "amizade-mundo": { main: "#2dd4bf", rgb: "45, 212, 191" },
 };
 
 const SPOTIFY_ARTIST_URL = "https://open.spotify.com/artist/6QaFYDGzDQ3aU3luXPfj9o";
 
 export default function Home() {
-  const [activeTheme, setActiveTheme] = useState<ThemeId>("familia");
+  const [activeTheme, setActiveTheme] = useState<ThemeId>("familia-mundo");
   const player = useAudioPlayer();
   const themeTracks = getTracksByTheme(activeTheme);
   const themeInfo = THEMES[activeTheme];

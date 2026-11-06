@@ -4,6 +4,7 @@
  */
 
 import { familiaAmizadeTracks } from "./familiaAmizadeTracks";
+import { familiaAmizadeIdiomasTracks } from "./familiaAmizadeIdiomasTracks";
 
 const CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663031543551";
 
@@ -25,6 +26,7 @@ export interface Track {
   isStreamingOnly?: boolean;
   spotifyUrl?: string;
   appleMusicUrl?: string;
+  reviewNote?: string;
 }
 
 export type ThemeId =
@@ -42,20 +44,36 @@ export type ThemeId =
   | "lumen-trap-exclusivas"
   | "familia"
   | "amizade"
-  | "brasil-em-festa";
+  | "brasil-em-festa"
+  | "familia-mundo"
+  | "amizade-mundo";
 
 export const THEMES: Record<ThemeId, { id: ThemeId; title: string; subtitle: string; description: string; icon: string }> = {
+  "familia-mundo": {
+    id: "familia-mundo",
+    title: "Família · Pelo Mundo",
+    subtitle: "Tema, ritmo e idioma de cada país",
+    description: "Adaptações experimentais em Kriolu de Santiago, espanhol cubano e isiZulu, inspiradas no funaná, no son e no kwela. Estas são escolhas entre a diversidade de línguas de cada país, não sua única representação. Faixas de IA ainda não distribuídas; as versões PT-BR foram preservadas em categoria separada.",
+    icon: "⌂",
+  },
+  "amizade-mundo": {
+    id: "amizade-mundo",
+    title: "Amizade · Pelo Mundo",
+    subtitle: "Três países, encontros sem fronteiras",
+    description: "Adaptações experimentais em inglês jamaicano, espanhol colombiano e japonês, inspiradas no ska, na cumbia e em texturas festivas do Japão. Faixas de IA ainda não distribuídas; as versões PT-BR continuam disponíveis separadamente.",
+    icon: "∞",
+  },
   "familia": {
     id: "familia",
-    title: "Família",
-    subtitle: "Reencontros, gerações e laços escolhidos",
+    title: "Família · Versões PT-BR",
+    subtitle: "As gravações em português preservadas",
     description: "Três composições originais geradas com IA, em português, com inspirações no funaná de Cabo Verde, no son cubano e no kwela sul-africano. Novas faixas do laboratório criativo, ainda não distribuídas.",
     icon: "⌂",
   },
   "amizade": {
     id: "amizade",
-    title: "Amizade",
-    subtitle: "Um abraço atravessa fronteiras",
+    title: "Amizade · Versões PT-BR",
+    subtitle: "As gravações em português preservadas",
     description: "Três composições originais geradas com IA, em português, inspiradas no ska jamaicano, na cumbia colombiana e em texturas festivas do Japão. Novas faixas do laboratório criativo, ainda não distribuídas.",
     icon: "∞",
   },
@@ -153,6 +171,7 @@ export const THEMES: Record<ThemeId, { id: ThemeId; title: string; subtitle: str
 };
 
 export const tracks: Track[] = [
+  ...familiaAmizadeIdiomasTracks,
   ...familiaAmizadeTracks,
   // ========== TEMA 1: SER FELIZ ==========
   {
