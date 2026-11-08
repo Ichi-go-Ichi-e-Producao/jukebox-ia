@@ -1,0 +1,31 @@
+name: Lumen operational readiness (read-only)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lumen-readiness
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout approved repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test review safeguards
+        run: python3 -m unittest discover -s ops/lumen -p 'test_*.py'
+      - name: Review pilot and public Jukeboxia URL
+        run: python3 ops/lumen/check_readiness.py --output "$RUNNER_TEMP/lumen-readiness.md"
+      - name: Add report to Actions summary
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/lumen-readiness.md" ]; then
+            cat "$RUNNER_TEMP/lumen-readiness.md" >> "$GITHUB_STEP_SUMMARY"
+          fi

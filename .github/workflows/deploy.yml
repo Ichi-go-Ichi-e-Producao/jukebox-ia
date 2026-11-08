@@ -25,7 +25,15 @@ jobs:
         with:
           version: 10
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+      - name: Check TypeScript
+        run: pnpm check
+      - name: Preserve approved music catalog
+        run: pnpm exec vitest run client/src/lib/familiaAmizadeTracks.test.ts client/src/lib/familiaAmizadeIdiomasTracks.test.ts --environment node
+      - name: Test Lumen operational safeguards
+        run: python3 -m unittest discover -s ops/lumen -p 'test_*.py'
+      - name: Validate Lumen operational manifest
+        run: python3 ops/lumen/check_readiness.py --offline --output /tmp/lumen-readiness.md
       - name: Build
         run: pnpm build
         env:

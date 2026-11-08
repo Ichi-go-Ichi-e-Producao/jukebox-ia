@@ -68,11 +68,26 @@ Plano: confirmar escolhas linguísticas; preparar seis letras cantáveis e promp
 - [x] Compactar e refazer somente Cuba e Colômbia após a transcrição das primeiras gerações detectar encerramentos incompletos
 - [x] Compactar e refazer isiZulu após a primeira geração também não alcançar o encerramento, usando só frases já revisadas
 - [x] Publicar apenas os áudios validados em CDN e guardar manifesto da nova edição
-- [ ] Finalizar o pacote de entrega com letras, traduções, prompts e seis MP3 finais, sem rascunhos
+- [x] Finalizar o pacote de entrega com letras, traduções, prompts e seis MP3 finais, sem rascunhos
 - [x] Organizar as versões internacionais no catálogo temático, com as versões PT-BR separadas e os oficiais intactos
-- [ ] Executar TypeScript, testes de preservação, build e teste de reprodução; publicar e confirmar a URL pública
+- [x] Executar TypeScript, testes de preservação, build e teste de reprodução; publicar e confirmar a URL pública
 - [x] Apresentar uma proposta de lançamento mensal com tema, países e idiomas, sem criar agenda automática ou enviar à distribuidora
+
+Publicação confirmada: commit ee300f7, GitHub Actions 42306684683 concluído com sucesso. Seis cards e seis áudios tocando, com progresso e duração finita, sem erro na URL pública https://ichi-go-ichi-e-producao.github.io/jukebox-ia/. Pacote /home/ubuntu/music-assets/Lumen-Familia-Amizade-Pelo-Mundo.zip validado por CRC e pelos hashes dos seis MP3; 34 arquivos, 24.555.634 bytes. Nenhum envio à distribuidora e nenhuma revisão humana nativa certificada. A proposta mensal permanece apenas sugestão para decisão com o usuário.
 
 Validação pré-publicação: seis MP3 distintos com decodificação completa, durações reais de 163,76 a 179,25 s e sete MP3 PT-BR preservados por hash. Seis checagens textuais de geração não encontraram problema material inequívoco; não houve escuta ou revisão humana nativa. Kriolu e isiZulu possuem aviso visível de revisão linguística pendente no card. TypeScript, 12 testes de regressão e build passaram. Todos os 42 registros anteriores continuam idênticos, agora 48 no total e 13 oficiais. Na prévia, os seis áudios carregaram e progrediram sem erro após clique real; as categorias PT-BR, o forró e os oficiais foram conferidos.
 
 Proposta preparada: uma edição mensal com três faixas, um tema e três países; versões PT-BR paralelas e edições maiores ocasionais. Arquivo /home/ubuntu/music-assets/familia-amizade-idiomas-20261107/proposta-serie-mensal.md, com orientações oficiais do Spotify e da DistroKid. A cadência ainda não foi aprovada nem agendada. Usuário confirmou “Pode seguir com esses idiomas”: Kriolu de Santiago, espanhol cubano, isiZulu, inglês jamaicano, espanhol colombiano e japonês. Geração autorizada pelo Manus após preparação das letras; sem Suno/Kie e sem envio à distribuidora.
+
+## Piloto Shopify/CJ e fluxo de operação Lúmen — 09/11/2026 JST
+
+Pedido: avaliar repositórios/Jukeboxia e montar um fluxo GitHub para organizar Shopify, fornecedores e divulgação. Plano deste passo: preservar catálogo e mídias; reforçar o deploy com TypeScript e testes já existentes; acrescentar auditoria manual de prontidão em JSON/Markdown, sem credenciais de fornecedores, importação, preços, estoque, pedidos, cobrança ou publicações comerciais automáticas. Integração comercial CJ/Paintory fica separada e condicionada ao editor, SKUs, impressão e aprovação de publicação do piloto.
+
+- [x] Reforçar o workflow de deploy existente com TypeScript e testes de preservação, sem duplicar deploys.
+- [x] Criar workflow manual de prontidão Lúmen, somente validação estática e relatório, com permissão mínima.
+- [x] Registrar a lista de verificações de fornecedor, preço, frete, qualidade e políticas no manifesto operacional.
+- [ ] Validar localmente e publicar o fluxo GitHub autorizado, acompanhando o resultado real do CI.
+- [x] Confirmar a preservação de 48 faixas, incluindo 13 oficiais, sete PT-BR desta coleção e seis adaptações, sem apagar nem alterar áudios.
+- [x] Documentar pendências reais da vitrine, analytics e imagens com expiração; não afirmar correções ainda não executadas.
+
+Validação local: TypeScript, 12 testes musicais, nove testes de travas operacionais, manifesto offline e build passaram. YAML dos dois workflows validado. Nenhum arquivo do catálogo, player ou mídia foi alterado. A auditoria dos nove repositórios encontrou melhorias reais, mas não certifica incidentes ou operações comerciais; resumo em /home/ubuntu/shopify-cj/piloto-20261109/auditoria-github.md.

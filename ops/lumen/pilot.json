@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "store": {"public_url": "https://lumennstory.myshopify.com", "currency": "JPY"},
+  "music_catalog": {"total_tracks": 48, "official_releases": 13, "collection_ptbr": 7, "collection_international": 6, "public_url": "https://ichi-go-ichi-e-producao.github.io/jukebox-ia/"},
+  "pilot": {
+    "name": "Lúmen — Entre Marés",
+    "status": "prepared_not_listed",
+    "primary_supplier": "CJdropshipping",
+    "comparison_supplier": "Paintory",
+    "cj_candidate_pid": "2412230926511600600",
+    "cj_candidate_sku": "CJWY2251614",
+    "supplier_sku_verified": false,
+    "design_saved_with_supplier": false,
+    "print_area_verified": false,
+    "final_cost_verified": false,
+    "shipping_verified": false,
+    "product_published": false,
+    "sample_received": false,
+    "wash_test_completed": false
+  },
+  "store_readiness": {
+    "identity_verified": true,
+    "main_theme": "External Redirect",
+    "checkout_path_verified": false,
+    "shipping_policy_complete": false,
+    "refund_policy_complete": false
+  },
+  "automation": {
+    "mode": "read_only_review",
+    "supplier_mutations": false,
+    "product_import": false,
+    "product_publish": false,
+    "price_changes": false,
+    "inventory_changes": false,
+    "order_creation": false,
+    "payments": false,
+    "auto_payment": false,
+    "marketing_messages": false
+  }
+}
