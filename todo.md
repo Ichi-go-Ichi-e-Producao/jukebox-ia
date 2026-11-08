@@ -86,8 +86,10 @@ Pedido: avaliar repositórios/Jukeboxia e montar um fluxo GitHub para organizar 
 - [x] Reforçar o workflow de deploy existente com TypeScript e testes de preservação, sem duplicar deploys.
 - [x] Criar workflow manual de prontidão Lúmen, somente validação estática e relatório, com permissão mínima.
 - [x] Registrar a lista de verificações de fornecedor, preço, frete, qualidade e políticas no manifesto operacional.
-- [ ] Validar localmente e publicar o fluxo GitHub autorizado, acompanhando o resultado real do CI.
+- [x] Validar localmente e publicar o fluxo GitHub autorizado, acompanhando o resultado real do CI.
 - [x] Confirmar a preservação de 48 faixas, incluindo 13 oficiais, sete PT-BR desta coleção e seis adaptações, sem apagar nem alterar áudios.
 - [x] Documentar pendências reais da vitrine, analytics e imagens com expiração; não afirmar correções ainda não executadas.
 
 Validação local: TypeScript, 12 testes musicais, nove testes de travas operacionais, manifesto offline e build passaram. YAML dos dois workflows validado. Nenhum arquivo do catálogo, player ou mídia foi alterado. A auditoria dos nove repositórios encontrou melhorias reais, mas não certifica incidentes ou operações comerciais; resumo em /home/ubuntu/shopify-cj/piloto-20261109/auditoria-github.md.
+
+Publicação dos workflows confirmada: commit a6334c46ad2e828dcdc6e563c05c214b760765c2. Deploy reforçado 42495316254 concluído com success; workflow manual Lumen operational readiness (read-only), execução 42495443503, também completed/success. Nenhuma ação comercial ocorreu. O relatório registra oito pendências e não certifica fornecedor, impressão, frete, checkout ou amostra como completos.
