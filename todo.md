@@ -93,3 +93,26 @@ Pedido: avaliar repositórios/Jukeboxia e montar um fluxo GitHub para organizar 
 Validação local: TypeScript, 12 testes musicais, nove testes de travas operacionais, manifesto offline e build passaram. YAML dos dois workflows validado. Nenhum arquivo do catálogo, player ou mídia foi alterado. A auditoria dos nove repositórios encontrou melhorias reais, mas não certifica incidentes ou operações comerciais; resumo em /home/ubuntu/shopify-cj/piloto-20261109/auditoria-github.md.
 
 Publicação dos workflows confirmada: commit a6334c46ad2e828dcdc6e563c05c214b760765c2. Deploy reforçado 42495316254 concluído com success; workflow manual Lumen operational readiness (read-only), execução 42495443503, também completed/success. Nenhuma ação comercial ocorreu. O relatório registra oito pendências e não certifica fornecedor, impressão, frete, checkout ou amostra como completos.
+
+## Correção de segurança Aikido — 18/11/2026 JST
+
+Autorização: preparar as correções e testes em branch separada; sem merge em main, deploy, AutoFix pago, alteração de scanners, regras de acesso ou revogação de credenciais nesta etapa. Branch: fix/security-aikido-20261118. Preservar catálogo, player, mídias e políticas existentes.
+
+Plano: atualizar as dependências verificadas com o mínimo de mudanças no lock; fixar Actions por SHA, limitar permissões do build e alinhar pnpm; adicionar cabeçalhos no servidor Express opcional com teste compatível com mídia; reproduzir instalação, TypeScript, testes e build e entregar resultado e diff. Os cabeçalhos do servidor opcional não mudam GitHub Pages. O estado dos alertas em main só pode ser reavaliado após integração autorizada.
+
+- [x] Criar worktree e branch separados, preservando alterações locais preexistentes.
+- [x] Atualizar as nove dependências/pacotes para as versões verificadas no primeiro lote e conferir todas as cópias resolvidas.
+- [x] Endurecer workflows e alinhar gerenciador de pacotes sem acionar publicação.
+- [x] Adicionar cabeçalhos de segurança e regressão para o servidor opcional.
+- [x] Validar instalação congelada, TypeScript da aplicação e dos testes, testes musicais/operacionais, build e smoke tests do player e links oficiais.
+- [x] Preparar branch/diff e resultados reais para entrega; merge e publicação permanecem pendentes de decisão.
+
+Primeiro lote validado localmente com 25 testes Vitest e nove Python. O servidor opcional foi depois validado com o prefixo /jukebox-ia/ e MIME correto; o navegador conectado não respondeu, mas o navegador local testou três áudios reais com reprodução, pausa, retomada e busca, inclusive no build final. Catálogo/client/player/políticas e patch Wouter permanecem idênticos à base 8456e3d.
+
+Segundo lote: treze análises concluídas, sem falhas finais, e conjunto compatível aplicado. Vite 7.3.7 e Vitest 4.1.12 removem os antigos caminhos Vitest 2/Vite 5/Tinypool/vite-node; peer do mocker aceita Vite 7. Nanoid 3.3.18/5.1.16 e Picomatch 4.0.7 preservam seus majors. Lock congelado, tipagem da aplicação/testes, 35 testes Vitest, nove Python, prontidão offline e build passaram. As regressões de dependências usam dados pequenos, sem exaustão ou ataque.
+
+- [x] Concluir a análise dos treze pacotes restantes, sem overrides incompatíveis entre majors.
+- [x] Aplicar o segundo lote compatível e registrar bloqueios reais.
+- [x] Reexecutar lock congelado, auditoria somente leitura, testes, build e reprodução após as mudanças.
+
+Auditoria atual da branch: zero Critical, um High, onze Moderate e três Low. High residual Picomatch GHSA-fc5q-39xc-vjpf afeta <=4.0.7 e não tem patch publicado; npm latest também é 4.0.7 em 18/11/2026 JST. Não ocultar o alerta, aplicar patch experimental, executar PoC ou declarar zero vulnerabilidades. Aviso do peer Builder JSX Loc/Vite e três imagens antigas de CDN com erro na prévia continuam registrados como pendências preexistentes, fora deste lote. Cabeçalhos do Express opcional não alteram o GitHub Pages. Main/deploy e atualização do scanner Aikido permanecem pendentes.
