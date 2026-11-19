@@ -116,3 +116,23 @@ Segundo lote: treze análises concluídas, sem falhas finais, e conjunto compat�
 - [x] Reexecutar lock congelado, auditoria somente leitura, testes, build e reprodução após as mudanças.
 
 Auditoria atual da branch: zero Critical, um High, onze Moderate e três Low. High residual Picomatch GHSA-fc5q-39xc-vjpf afeta <=4.0.7 e não tem patch publicado; npm latest também é 4.0.7 em 18/11/2026 JST. Não ocultar o alerta, aplicar patch experimental, executar PoC ou declarar zero vulnerabilidades. Aviso do peer Builder JSX Loc/Vite e três imagens antigas de CDN com erro na prévia continuam registrados como pendências preexistentes, fora deste lote. Cabeçalhos do Express opcional não alteram o GitHub Pages. Main/deploy e atualização do scanner Aikido permanecem pendentes.
+
+## Retomada e manutenção pontual — 19/11/2026 JST
+
+As correções anteriores foram integradas em main 1109b07 e publicadas com sucesso no run 44186356237. O registro acima descreve a preparação de 18/11, não o estado atual. Em resposta a “adiantar alguma coisa na shopfi e ... terminar de resolver a nossa juki”, manutenção autorizada em branch separada fix/juki-analytics-20261119, preservando catálogo, versões dos áudios, player, imagens, políticas, dependências e permissões.
+
+Conferência pública em navegador isolado de 19/11: reprodução real de duas faixas, pausa, retomada, busca, troca de faixa e filtros passaram. Três imagens antigas continuam indisponíveis; não foram encontradas cópias originais no ambiente atual. Não recriar nem substituir a arte por outra sem combinar com o usuário. A navegação Aikido ainda depende de uma janela do navegador conectado.
+
+Auditoria nova, somente leitura: zero Critical, zero High, onze Moderate e três Low. O advisory Picomatch GHSA-fc5q-39xc-vjpf foi retirado pelo GitHub em 18/11/2026; Picomatch latest permanece 4.0.7. A retirada do aviso não é um novo patch nem prova de risco inexistente. Não ocultar outros avisos ou declarar segurança total. Fonte: https://github.com/advisories/GHSA-fc5q-39xc-vjpf.
+
+Plano: remover apenas o script de analytics sem endpoint/website ID que o deploy transforma em /umami (404); acrescentar regressão do HTML; executar tipagem, suíte completa, testes operacionais e build; conferir que catálogo e player permanecem idênticos à main; enviar branch e integrar somente após checks aprovados, sem bypass; validar HTML publicado. Não instalar um analytics novo nem inventar endereço ou ID.
+
+- [x] Concluir teste de interface e reprodução em produção da versão atual.
+- [x] Conferir novamente o alerta alto residual e registrar sua retirada oficial.
+- [x] Remover chamada /umami inválida e acrescentar regressão.
+- [x] Validar tipagem, 37 testes Vitest, nove Python, prontidão offline, build e preservação do catálogo/player/lock.
+- [ ] Publicar correção pontual após CI aprovado e conferir HTML público.
+- [ ] Recuperar as três artes originais ou combinar substituições com o usuário.
+- [ ] Conferir o Aikido quando houver janela do navegador conectado.
+
+Registro de preparação: o resultado da integração e a confirmação do HTML público serão anexados ao PR após o CI. Nenhum arquivo do catálogo, player, imagem, política ou dependência foi modificado neste lote.
