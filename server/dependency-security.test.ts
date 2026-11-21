@@ -15,6 +15,20 @@ function requireFromDirectPackage(name: string) {
 
 // Small benign inputs only. These do not certify all denial-of-service scenarios.
 describe("compatibilidade das dependências de segurança", () => {
+  it("mantém a correção de GHSA-p4f5-76q4-ffq7 nas resoluções de Vite", async () => {
+    const fixedVersion = "7.3.8";
+    const manifest = JSON.parse(await readFile(path.resolve("package.json"), "utf8"));
+    expect(manifest.devDependencies.vite).toBe(fixedVersion);
+    for (const selector of ["vite@7", "vitest@4.1.12>vite", "@vitest/mocker@4.1.12>vite"]) {
+      expect(manifest.pnpm.overrides[selector]).toBe(fixedVersion);
+    }
+    expect(requireFromDirectPackage("vite")("vite/package.json").version).toBe(fixedVersion);
+    const vitestRequire = requireFromDirectPackage("vitest");
+    expect(vitestRequire("vite/package.json").version).toBe(fixedVersion);
+    const mockerRequire = createRequire(vitestRequire.resolve("@vitest/mocker"));
+    expect(mockerRequire("vite/package.json").version).toBe(fixedVersion);
+  });
+
   it("preserva safeParse para dados válidos e inválidos", () => {
     const schema = z.object({ title: z.string().min(1) });
     expect(schema.safeParse({ title: "Lúmen" }).success).toBe(true);
